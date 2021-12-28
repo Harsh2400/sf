@@ -1,0 +1,250 @@
+<%-include('./partial/header.ejs')-%>
+    <br><br>
+
+    
+   
+    <div class="ad_post">
+        <div class="container_ad">
+
+            <form action="/" method="POST" enctype="multipart/form-data">
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="firstname">First Name</label>
+                    </div>
+                    <div class="name">
+                        &ensp;&ensp;&ensp;
+                        <!-- <i class="far fa-address-book fa-2x" style="font-size: 30px;"></i> --><input type="text" id="firstname" placeholder="First Name" value="" name="firstname" maxlength="30" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lastname">Last Name</label>
+                    </div>
+                    <div class="name">
+                        &ensp;&ensp;&ensp;&nbsp;<input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="gender">Type of accommodation</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;&nbsp;<input type="radio" id="gender" name="gender" value="Male"> Male
+                        <input type="radio" id="gender" name="gender" value="Female"> Female
+                        <input type="radio" id="gender" name="gender" value="Other"> Others
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="phone">Phone No.</label>
+                    </div>
+                    <div class="phone_pin">
+                        &ensp;&ensp;&ensp;<input type="number" id="phone" minlenght="10" maxlenght="10" placeholder="" name="phone">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">State</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<select id="state" name="state">
+                <option value></option>
+                <option value="Andhra pradesh">Andhra Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Arunachal-pradesh">Arunachal Pradesh</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal-pradesh">Himachal Pradesh</option>
+                <option value="Jammu & kashmir">Jammu & Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnatka">Karnatska</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya-pradesh">Madhya Pradesh</option>
+                <option value="Maharastra">Maharastra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Orissa">Orissa</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil-nadu">Tamil Nadu</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Uttar-pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>                                
+            </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="text" id="city" placeholder="" value="" name="city">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="district">District</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="text" id="district" placeholder="" value="" name="district">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="pincode">PIN Code</label>
+                    </div>
+                    <div class="phone_pin">
+                        &ensp;&ensp;&ensp;<input type="number" id="pincode" rows="4" placeholder="PIN Code" value="" maxlength="6" minlength="6" name="pincode">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<textarea id="address" rows="4" cols="30" name="address" class="textarea1" placeholder=""></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="landmark">Land Mark</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<textarea id="landmark" rows="3" cols="30" name="landmark" class="textarea2" placeholder=""></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="amenities">Amenities</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="checkbox" id="wifi" name="wifi" value="Wifi">
+                        <label for="wifi">WIFI</label>
+                        <input type="checkbox" id="parking" name="parking" value="Parking">
+                        <label for="parking">Parking</label><br> &ensp;&ensp;&nbsp;
+                        <input type="checkbox" id="ac" name="ac" value="AC">
+                        <label for="ac">Air Conditioner</label><br>&ensp;&ensp;&nbsp;
+                        <input type="checkbox" id="balcony" name="balcony" value="Balcony">
+                        <label for="balcony">Balcony</label><br> &ensp;&ensp;&nbsp;
+                        <input type="checkbox" id="metro" name="metro" value="Metro" onchange="showmetro()">
+                        <label for="metro">Nearby Metro</label>
+                    </div>
+                </div>
+                <div class="row" id="metro_s_name" style="display: none;">
+                    <div class="col-25">
+                        <label for="metro">Station Name</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="text" name="ms_name" id="ms_name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="kitchen">Kitchen</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="radio" id="kitchen" name="kitchen" value="Shared">Shared
+                        <input type="radio" id="kitchen" name="kitchen" value="Separate">Separate
+                        <input type="text" id="checkkitchen" style="display: none;">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="washroom">Washroom</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="radio" id="washroom" name="washroom" class="input_rss" value="Shared">Shared
+                        <input type="radio" id="washroom" name="washroom" class="input_rss" value="Separate">Separate
+                        <input type="text" id="check_w_room" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="ttl_accom">Total Accomodation</label>
+                    </div>
+                    <div class="col-85">
+                        &ensp;&ensp;&ensp;<input type="number" id="ttl_accom" class="input-vc" placeholder="" value="" name="ttl_accom" maxlength="3">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="vcnt_accom">Vaccant Accomodation</label>
+                    </div>
+                    <div class="col-85">
+                        &ensp;&ensp;&ensp;<input type="number" id="vcnt_accom" class="input-vc" placeholder="" value="" name="vcnt_accom" maxlength="3">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="price">Price</label>
+                    </div>
+                    <div class="col-85">
+                        &ensp;&ensp;&ensp;<input type="number" step="1" id="price" class="input-price" placeholder="" value="" name="price" maxlength="4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="image">Upload Image</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<input type="file" id="image" class="img-field" name="image" value="" required>
+                    </div>
+                    
+                    
+                </div>    
+                <div class="row">
+                    <div class="col-25">
+                        <label for="desc">Add description</label>
+                    </div>
+                    <div class="col-75">
+                        &ensp;&ensp;&ensp;<textarea id="desc" rows="5" cols="40" name="desc" placeholder="" required></textarea>
+                    </div>
+                    <div class="row">
+                        <center> <button type="submit">Submit</button></center>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        $('#metro_s_name').css('display', 'none'); // Hide the text input box in default
+        function showmetro() {
+            if ($('#metro').prop('checked')) {
+                $('#metro_s_name').css('display', 'block');
+            } else {
+                $('#metro_s_name').css('display', 'none');
+            }
+        }
+        
+    </script>
+
+
+    <hr>
+
+    <%-include('./partial/footer.ejs')-%>

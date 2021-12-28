@@ -1,0 +1,407 @@
+<%-include('./partial/header.ejs')-%>
+    <br><br>
+    <div>
+        <br><br>
+        <% items.forEach(function(image) { %>
+            <div class="container" style="height: auto;width: auto;">
+
+                <style>
+                    * {
+                        box-sizing: border-box;
+                    }
+                    
+                    body {
+                        background: white no-repeat;
+                        background-size: cover;
+                    }
+                    
+                    .main {
+                        float: left;
+                        width: 50%;
+                        padding: 0 70px;
+                        overflow: hidden;
+                        padding-left: 150px;
+                        /* margin-top: 60px; */
+                    }
+                    
+                    .right {
+                        background-color: rgba(255, 255, 255, .25);
+                        backdrop-filter: blur(5px);
+                        border-radius: 10px;
+                        float: left;
+                        width: 40%;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        margin-top: -110px;
+                        margin-left: 3px;
+                        box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+                        perspective: 2700px;
+                    }
+                    
+                    .desc {
+                        background-color: rgba(255, 255, 255, .25);
+                        backdrop-filter: blur(5px);
+                        border-radius: 10px;
+                        float: left;
+                        width: 40%;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        margin-top: 15px;
+                        margin-left: 3px;
+                        box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+                        perspective: 2700px;
+                    }
+                    
+                    .amenities {
+                        background-color: rgba(255, 255, 255, .25);
+                        backdrop-filter: blur(5px);
+                        padding-left: 12px;
+                        padding-bottom: 5px;
+                        margin-right: 10px;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+                        perspective: 2700px;
+                    }
+                    
+                    .contact {
+                        background-color: rgba(255, 255, 255, .25);
+                        backdrop-filter: blur(5px);
+                        /* padding-left: 12px; */
+                        /* padding-bottom: 5px; */
+                        /* margin-right: 10px; */
+                        border-radius: 10px;
+                        box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+                        perspective: 2700px;
+                        margin-right: 10px;
+                    }
+                    
+                    @media only screen and (max-width:600px) {
+                        /* For tablets: */
+                        .main {
+                            width: 80%;
+                            padding: 0;
+                            margin-top: 0px;
+                            margin-right: 5px;
+                        }
+                        .right {
+                            width: 100%;
+                            margin-top: 20px;
+                        }
+                        .desc {
+                            width: 100%;
+                            margin-right: 5px;
+                        }
+                    }
+                    
+                    @media only screen and (max-width:500px) {
+                        /* For mobile phones: */
+                        .main,
+                        .right {
+                            width: 100%;
+                            margin-left: 5px;
+                            margin-right: 5px;
+                        }
+                        .desc {
+                            width: 100%;
+                            margin-right: 5px;
+                        }
+                    }
+                    
+                    #h3-gender {
+                        text-align: left;
+                        float: left;
+                        margin-left: 175px;
+                    }
+                    
+                    #genderaccom {
+                        text-align: right;
+                        float: left;
+                        margin-left: 15px;
+                        margin-top: 5px;
+                    }
+                    
+                    @media only screen and (max-width:600px) {
+                        #h3-gender {
+                            justify-content: left;
+                            text-align: left;
+                            float: left;
+                            margin-left: 50px;
+                        }
+                        #genderaccom {
+                            font-size: 25px;
+                            text-align: right;
+                            float: left;
+                            margin-left: 15px;
+                            margin-top: 5px;
+                        }
+                        #h2-loc {
+                            font-size: large;
+                        }
+                    }
+                </style>
+                <div style="overflow:auto">
+
+                    <div class="main">
+                        <div style="margin-left: 20px;">
+                            <img id="idimage" src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>" style="width:90%;box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);perspective: 2700px; border-radius: 10px;" onclick="newTabImage()">
+                        </div>
+                        <h3 style=" background-color: rgb(255, 255, 255, .25);backdrop-filter: blur(5px); padding-left: 12px; margin-right: 10px; border-radius: 10px; box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);perspective: 2700px;">Pricing per month:
+                            <%= image.price %>
+                        </h3>
+                        <div style=" font-size: large; ">
+
+                            <script>
+                                function newTabImage() {
+                                    var image = new Image();
+                                    image.src = $('#idimage').attr('src');
+                                    var h = screen.height;
+                                    var w = screen.width;
+
+                                    var win = window.open("", '_blank', 'width=' + w + ', height=' + h + '');
+                                    win.document.write(image.outerHTML);
+                                    win.document.close();
+                                }
+                            </script>
+
+
+                            <div>
+                                Total Accomodations:
+                                <%= image.ttl_accom %>&nbsp;<i class="fas fa-bed"></i></i>&nbsp;&nbsp;&nbsp;Available:
+                                    <%= image.vcnt_accom %>&nbsp;<i class="fas fa-bed"></i>
+                            </div>
+                            <div class="amenities">
+                                <h2>Amenities:</h2>
+
+
+                                <p>
+                                    <i id="wifilogo" class="fas fa-wifi" style="text-align: left;float: left;padding-top: 5px;"></i>
+                                    <p id="wifi" style="text-align: right;margin-right: 442px;padding-top: 3px;">
+                                        <%= image.wifi %>
+                                    </p>
+                                </p>
+
+                                <p>
+                                    <i id="aclogo" class="fas fa-fan" style="text-align: left;float: left;padding-top: 3px;"></i>
+                                    <p id="ac" style="text-align: right;margin-right: 452px;">
+                                        <%= image.ac %>
+                                    </p>
+                                </p>
+
+                                <p>
+                                    <i id="balconylogo" class="fas fa-sun" style="text-align: left;float: left;padding-top: 3px;"></i>
+                                    <p id="balcony" style="text-align: right;margin-right: 412px;">
+                                        <%= image.balcony %>
+                                    </p>
+                                </p>
+
+                                <p>
+                                    <i id="parkinglogo" class="fas fa-car" style="text-align: left;float: left;padding-top: 3px;"></i>
+                                    <p id="parking" style="text-align: right;margin-right: 415px;">
+                                        <%= image.parking %>
+                                    </p>
+                                </p>
+
+                                <p>
+                                    <i id="metrologo" class="fas fa-train" style="text-align: left;float: left;padding-top: 3px;"></i>
+                                    <p id="metro" style="text-align: right;margin-right: 428px;">
+                                        <%= image.metro %>
+                                    </p>
+                                </p>
+                                <p id="ms_name"> &nbsp;&nbsp;&nbsp;&nbsp;&emsp;(
+                                    <%= image.ms_name %> )</p>
+                                <br>
+
+                                <p id="kitchen">
+                                    <i id="kitchenlogo" class="fas fa-utensils"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <%= image.kitchen %> Kitchen
+                                </p>
+
+                                <p id="washroom">
+                                    <i id="washroomlogo" class="fas fa-toilet"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <%= image.washroom %> Washroom
+                                </p>
+
+                                <style>
+                                    @media only screen and (max-width:600px) {
+                                        #metro {
+                                            margin-left: 42px;
+                                        }
+                                        #parking {
+                                            margin-left: 42px;
+                                        }
+                                        #balcony {
+                                            margin-left: 42px;
+                                        }
+                                        #ac {
+                                            margin-left: 42px;
+                                        }
+                                        #wifi {
+                                            margin-left: 42px;
+                                        }
+                                    }
+                                </style>
+
+                                <script>
+                                    var wifi = document.getElementById('wifi')
+                                    if (wifi.innerText === "No") {
+                                        document.getElementById("wifi").style.display = "none";
+                                        document.getElementById("wifilogo").style.display = "none";
+                                    }
+
+                                    var ac = document.getElementById('ac')
+                                    if (ac.innerText === "No") {
+                                        document.getElementById("ac").style.display = "none";
+                                        document.getElementById("aclogo").style.display = "none";
+                                    }
+
+                                    var parking = document.getElementById('parking')
+                                    if (parking.innerText === "No") {
+                                        document.getElementById("parking").style.display = "none";
+                                        document.getElementById("parkinglogo").style.display = "none";
+                                    }
+
+                                    var balcony = document.getElementById('balcony')
+                                    if (balcony.innerText === "No") {
+                                        document.getElementById("balcony").style.display = "none";
+                                        document.getElementById("balconylogo").style.display = "none";
+                                    }
+
+                                    var metro = document.getElementById('metro')
+                                    if (metro.innerText === "No") {
+                                        document.getElementById("metro").style.display = "none";
+                                        document.getElementById("metrologo").style.display = "none";
+                                        document.getElementById("ms_name").style.display = "none";
+                                    }
+                                </script>
+
+                            </div>
+                            <br>
+                            <div class="contact">
+                                <!-- map -->
+                                <div style="width: 100%">
+                                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=<%= image.address %>+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                </div>
+                                <br>
+                                <center>
+                                    <a href="/connect?id=<%= image._id %>" id="adid"><img src="whatsapp.png" alt="whatsapp" style="width:42px;height:42px; border-radius: 20px;"> Connect to Advertiser</a>
+                                   <!--  <div>
+                                        <a href="https://api.whatsapp.com/send?phone=+91<%= image.phone %>"><img src="whatsapp.png" alt="whatsapp" style="width:42px;height:42px; border-radius: 20px;"> Contact the Advertiser</a>
+                                    </div> -->
+                                </center>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 90px; "><br>
+                        <div class="right ">
+                            <h1 id="h1-accom" style="background-color: rgba(255, 255, 255, .25); backdrop-filter: blur(5px);color:black; border-radius: 10px; text-align: center; font-weight: 450;">Accomodation Details</h1>
+
+                            <style>
+                                @media only screen and (max-width:600px) {
+                                    #h1-accom {
+                                        font-size: 25px;
+                                        font-weight: 500;
+                                    }
+                                }
+                            </style>
+
+
+                            <h3 id="h3-gender"> <i id="genderlogo" class="fas fa-male"></i></h3>
+                            <h3 id="genderaccom" style="font-weight: bold;">
+                                <%= image.gender %>
+                            </h3>
+
+
+                            <script>
+                                gender = document.getElementById('genderaccom')
+
+                                if (genderaccom.innerText === "Male") {
+                                    document.getElementById('genderaccom').innerText = "Male Accomodation"
+                                }
+
+                                if (genderaccom.innerText === "Female") {
+                                    document.getElementById('genderlogo').className = "fas fa-female"
+                                    document.getElementById('genderaccom').innerText = "Female Accomodation"
+                                }
+
+                                if (genderaccom.innerText === "Other") {
+                                    document.getElementById('genderlogo').className = "fas fa-transgender"
+                                    document.getElementById('genderaccom').innerText = "Transgender Accomodation"
+                                }
+                            </script>
+
+                            <br><br>
+                            <h2 id="h2-loc" style="font-weight: 500;"><i class="fas fa-search-location"></i>&nbsp;Location:</h2>
+                            <center>
+                                <h5 style="font-weight: 500;">&nbsp;State :
+                                    <%= image.state %> &emsp;City :
+                                        <%= image.city %>
+                                </h5>
+                                <h5 style="font-weight: 500;">District :
+                                    <%= image.district %>&emsp;Pin-Code :
+                                        <%= image.pincode %>
+                                </h5>
+                            </center>
+
+
+                            <h3 style="font-weight: 500;">Address : </h3>
+                            <textarea rows="4 " style="overflow: hidden; word-wrap: break-word; width: 100%; " placeholder="House no./street/Road/Colony/Area/ " readonly><%= image.address %></textarea><br>
+
+                            <h3 style="font-weight: 500;">Landmark : </h3>
+                            <textarea rows="2 " style="overflow: hidden; word-wrap: break-word; width: 100%; " placeholder="Landmark" readonly><%= image.landmark %></textarea>
+                            <br><br>
+                            <!-- <div>
+
+                                <a href="https://api.whatsapp.com/send?phone=+91<%= image.phone %>"><img src="whatsapp.png" alt="whatsapp" style="width:42px;height:42px; border-radius: 20px;"> Contact the Advertiser</a>
+                            </div>
+                            <br> -->
+
+                        </div>
+
+                        <div class="desc">
+                            <h3 style="font-weight: 500;">Description :</h3>
+                            <textarea rows="4 " style="overflow: hidden; word-wrap: break-word; width: 100%; " placeholder="House no./street/Road/Colony/Area/ " readonly><%= image.desc %></textarea>
+                            <br><br>
+                            <!-- payment -->
+                            <div> <br>
+                                <!-- <form>
+                                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_I42KV3u1fkU94Q" async>
+                                    </script>
+                                </form> -->
+
+                                <!-- <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_I5ASiIdQzFvRb5/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
+                                    <script>
+                                        (function() {
+                                            var d = document;
+                                            var x = !d.getElementById('razorpay-embed-btn-js')
+                                            if (x) {
+                                                var s = d.createElement('script');
+                                                s.defer = !0;
+                                                s.id = 'razorpay-embed-btn-js';
+                                                s.src = 'https://cdn.razorpay.com/static/embed_btn/bundle.js';
+                                                d.body.appendChild(s);
+                                            } else {
+                                                var rzp = window['__rzp__'];
+                                                rzp && rzp.init && rzp.init()
+                                            }
+                                        })();
+                                    </script>
+                                </div> -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <% }) %>
+
+    </div>
+
+
+    <%-include('./partial/footer.ejs')-%>
+
+        <!-- map laternate to try on https://www.google.com/maps/@28.7190415,77.1114577,14z?hl=en -->

@@ -1,0 +1,45 @@
+<%-include('./partial/header.ejs')-%>
+    <br><br><br>
+    <% items.forEach(function(image) { %>
+        <div class="edit_prof_con">
+            <h1 style="float:center;">EDIT PROFILE</h1>
+              <form action="/update" method="POST">
+              <input type="text" name="adid" id="adid" value="<%= image._id%>" style="display: none;">
+              <div class="row">
+                <div class="col-e25">
+                  <label for="price" class="edit_label">Price</label>
+                </div>
+                <div class="col-e75">
+                  <input type="number" step="1" id="price" name="price" class="input-price" value="<%= image.price %>" placeholder="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-e25">
+                  <label for="ttl_accom" class="edit_label">Total Accomodation</label>
+                </div>
+                <div class="col-e75">
+                  <input type="number" id="ttl_accom" name="ttl_accom" placeholder="" class="input-vc" value="<%= image.ttl_accom %>" maxlength="3">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-e25">
+                  <label for="vcnt_accom" class="edit_label">Vaccant Accomodation</label>
+                </div>
+                <div class="col-e75" >
+                  <input type="number" id="vcnt_accom" class="input-vc" placeholder="" value="<%= image.vcnt_accom %>" name="vcnt_accom" maxlength="3">
+                </div>
+              </div>
+                  
+              
+              <div class="row">
+                <center><button type="submit">Submit</button></center>
+              </div>
+            
+            </form>
+          </div>
+          
+          
+
+
+        <% }) %>
+            <%-include('./partial/footer.ejs')-%>

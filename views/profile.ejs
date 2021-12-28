@@ -1,0 +1,63 @@
+<%-include('./partial/header.ejs')-%>
+<br><br> 
+<!-- target="_blank" rel="noopener noreferrer" -->
+<!-- <h1><a href="https://rzp.io/l/1TStA9db3" id="lnk"  onload="click()">premium</a></h1>
+
+<script type="text/javascript">
+    window.onload = function() {
+        /* alert('page loaded'); */
+        document.getElementById('lnk').click();
+    };
+</script> -->
+    <div class="profile_name" >
+        <div class="username">
+            <i class="fas fa-user-circle" style="display: flex;">&nbsp;&nbsp;<p id="username"></p></i>
+        </div>
+        <div class="userdetails01">
+            <p id="user_email" style="display: flex;"></p>
+            <i style="display: flex;">+91 &nbsp;<p id="user_phone"></p></i>
+            
+        </div>
+        <script>
+            var name = <%-JSON.stringify(name)%>
+            document.getElementById("username").innerHTML=name
+        </script>
+        <script>
+            var email = <%-JSON.stringify(email)%>
+            document.getElementById("user_email").innerHTML=email    
+        </script>
+        <script> 
+            var phone = <%-JSON.stringify(phone)%>
+            document.getElementById("user_phone").innerHTML=phone
+        </script>
+    </div>
+    <h1 class="profile_ads_h"> Your Advertisements</h1>
+
+    <div>
+
+
+        <% items.forEach(function(image) { %>
+
+            <div class="profile_ads">
+
+                <div class="img__wrap" style="Text-align:center;float:left; background-color: white; height: 300px;margin: 0 5px 0 5px;">
+
+                    <img class='img_img' src="data:image/<%=image.img.contentType%>;base64,
+                        <%=image.img.data.toString('base64')%>" width="100%" >
+                    <p class="dlt_btn"><a href="/delete?id=<%= image._id %>" id="adid"><i class="far fa-trash-alt" style="font-size: large;"></i></a></p>
+                    <p class="img__description"><a href="/ad_desc?id=<%= image._id %>" id="adid">See Details</a></p>
+                    <p class="name_desc">
+                        <%= image.district %>,
+                            <%= image.state %>
+                    </p>
+                    
+                    <p class="edit_btn"><a href="/profile_edit?id=<%= image._id %>" id="edit"><i class="far fa-edit" style="font-size: large;"></i></a></p>
+                    <!-- <p style="color: red;"><a href="/update?id=<%= image._id %>" id="adid">Update</a></p> -->
+                </div>
+            </div>
+
+            <% }) %>
+           
+    </div>
+
+    <%-include('./partial/footer.ejs')-%>

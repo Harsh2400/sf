@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <li class="logo"><a href="/home">SR</a></li>
+            <div class="items">
+                <a href="/ad_section">Explore</a>
+                <!-- <a href="https://rzp.io/l/1TStA9db3">Post Ad</a> -->
+                <a href="/adpost">Post Ad</a>
+                <!-- <a href="/about">About</a> -->
+                <a href="/logout">Log Out</a>
+                <a href="/profile">Profile</a>
+            </div>
+
+            <form action="/search" class="search" method="get">
+                <input type="text" id="dsearch" name="dsearch" placeholder="Search..." oninvalid="this.setCustomValidity('Enter any state/district')" required>
+                <button type="submit" class="search"><i class="fas fa-search"></i></button>
+            </form>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+
+        </div>
+    </nav>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

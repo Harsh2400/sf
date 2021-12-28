@@ -1,0 +1,258 @@
+<html>
+  
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .container1 {
+          position: relative;
+          text-align: center;
+          color: white;
+          background-image: url(img123.jpeg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          margin-bottom: 60px;
+          
+        }
+        .container2 {
+          position: relative;
+          text-align: center;
+          color: white;
+          background-image: url(0f52c8ba-e693-438b-af38-75cb1906ebe3.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          
+        }
+        
+        
+        .centered {
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+.slider-wrapper{
+
+  
+color: #aaa;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-top: 50px;
+padding-right: 100px;
+background-color: black;
+
+}
+
+
+
+.slider div{
+
+color: white;
+
+height: 50px;
+
+margin-bottom: 50px;
+text-align: center;
+opacity: 0.7;
+
+}
+
+.slider{
+
+height: 100px;
+margin-bottom: -50px;
+
+
+overflow: hidden;
+
+}
+
+.slider-text1{
+
+
+
+animation: slide 5s linear infinite;
+
+} 
+
+
+
+@keyframes slide{
+
+0% {margin-top: -300px;}
+
+5% {margin-top: -200px;}
+
+33% {margin-top: -200px;}
+
+38% {margin-top: -100px;}
+
+66% {margin-top: -100px;}
+
+71% {margin-top: 0px;}
+
+100% {margin-top: 0px;}
+
+}
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: black;
+  color: white;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+
+.button{
+  background-color: black; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+  </style>
+
+
+        
+         <body>
+          
+         <div class="container1" >
+           
+          <img src="IMG_5171.jpg" alt="Snow" style="margin-top: 40px; margin-right: 565px; width:30%; height:90%">
+          
+          <div>
+            <form action="/login" method="GET">
+                <button class="button" type="submit" style="margin-top: -153px; margin-left: 600px;">Register</button>
+            </form>
+            <form action="/ad_section" method="GET">
+              <button class="button" type="submit" style="margin-left:400px; margin-top: -170px;">Explore</button>
+          </form>
+        </div>
+            
+        </div>
+          <div class="centered" style="font-size: 120px; margin-top: 135px; margin-left: -250px; animation: fadeInAnimation ease 3s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards; color:white ; ">
+            &nbspWelco<br>Shared</div>
+            
+          <div class="centered" style="font-size: 120px; margin-top: 67px; margin-left: -33px; color: black; animation: fadeInAnimation ease 3s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;">
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbspme to</div>
+          <div class="centered" style="font-size: 120px; filter: opacity(0.7); margin-top: 200px;  color: black; animation: fadeInAnimation ease 3s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;">
+              Roof</div> 
+
+              
+            </div>
+            
+            
+            <div class="container2" style="font-size: 120px; margin-top: 67px; margin-left: -33px; color: black;">
+              
+
+
+
+
+
+  
+
+      <div class="slider-wrapper" style="font-size: 80px;">
+
+
+          <div class="slider">
+
+              <div class="slider-text1"> comfortable</div>
+
+              <div class="slider-text2"> pocket-friendly</div>
+
+              
+
+          </div>
+
+      </div>
+      <p style="font-size: 70px; margin-right: 800px; margin-top: -80px; color: white;">looking for a</p>
+      <p style="font-size: 70px; margin-right: 750px; margin-top: -80px;">accomodation?</p>
+      <div style="padding-left: 300px; padding-right: 300px; padding-bottom: 50px;">
+      <p style="font-size: 40px; background-color: white; ">“We the SharedRoof are here to ensure that you find the right place on a fair price.”<br><p>
+      </div>
+        
+      </div>
+      <button type="button" class="collapsible"> <p style="font-size: 20px;">What is it?</p> </button>
+<div class="content">
+  <p style="font-size: 20px;">Our goal is to help you cut down your costs and time consumption, now you can look for your desired rental accommodations sitting at a place rather than moving places in search for one.</p>
+</div>
+<button type="button" class="collapsible"> <p style="font-size: 20px;"> What we do?</p></button>
+<div class="content">
+  <p style="font-size: 20px;">Here on our platform, owner of an accommodation can upload an advertisement containing all the information about his rental. <br>
+    The people looking for an accommodation in any state can search for available rental places in that state and look for what suits them. <br>
+    If a person finds a suitable place, he/she can directly contact the owner to discuss further.
+    </p>
+</div>
+<button type="button" class="collapsible"><p style="font-size: 20px;">What is new?</p></button>
+<div class="content">
+  <p style="font-size: 20px;">
+      There is one more benefit that our platform provides. i.e. <br>
+      Students & employees who are currently living in an accommodation can post an ad about the vacant place in their room or hostel. And the ones who are searching can look out if it suits and contact the person who posted the advertisement.
+  </p>
+</div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>  
+        
+      </body>
+
+      
+        
+      
+       
+
+    
+</html>

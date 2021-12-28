@@ -1,0 +1,33 @@
+<%-include('./partial/header.ejs')-%>
+    <br><br>
+    <div>
+        <br><br>
+        <% items.forEach(function(image) { %>
+
+            <center>
+
+                <div>
+                    <a id="lnk" href="https://api.whatsapp.com/send?phone=+91<%= image.phone %>"><img src="whatsapp.png"
+                            alt="whatsapp" style="width:42px;height:42px; border-radius: 20px;"> Contact the
+                        Advertiser</a>
+                </div>
+                <!-- target="_blank" rel="noopener noreferrer" -->
+                <!-- <h1><a href="https://rzp.io/l/1TStA9db3" id="lnk"  onload="click()">premium</a></h1> -->
+
+                <script type="text/javascript">
+                    window.onload = function () {
+                        /* alert('page loaded'); */
+                        document.getElementById('lnk').click();
+                    };
+                </script>
+            </center>
+            <br>
+
+            <% }) %>
+
+    </div>
+
+
+    <%-include('./partial/footer.ejs')-%>
+
+        <!-- map laternate to try on https://www.google.com/maps/@28.7190415,77.1114577,14z?hl=en -->

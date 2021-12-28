@@ -1,0 +1,26 @@
+<%-include('./partial/header.ejs')-%>
+    <br><br>
+
+    <h1>Advertisements</h1>
+
+    <div>
+        <% items.forEach(function(image) { %>
+
+            <div>
+
+                <div class="img__wrap" style="Text-align:center;float:left; background-color: white; height: 300px; ">
+
+                    <img class='img_img' src="data:image/<%=image.img.contentType%>;base64,
+                        <%=image.img.data.toString('base64')%>" width="100%" style="filter: blur(2px); -webkit-filter: blur(2px);">
+
+                    <p class="img__description"><a href="/ad_desc?id=<%= image._id %>" id="adid">See Details</a></p>
+                    <p class="name_desc">
+                        <%= image.district %>,
+                            <%= image.state %>
+                    </p>
+
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    <%-include('./partial/footer.ejs')-%>
